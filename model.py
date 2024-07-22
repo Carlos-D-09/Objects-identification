@@ -60,11 +60,11 @@ def main():
     #GPU settings
     physical_devices = tf.config.list_physical_devices('GPU')
     if len(physical_devices) == 0:
-        print("No se encontró una GPU disponible. TensorFlow utilizará la CPU.")
+        print("GPU wasn't find. TensorFlow will use the CPU.")
     else:
         tf.keras.backend.clear_session()
         tf.config.experimental.set_memory_growth(physical_devices[0], True)
-        print("GPU detectada y configurada para uso.")
+        print("GPU detected and configured to be used")
 
     # Convertir las imágenes a formato RGBA si es necesario
     convert_to_rgba("test")
